@@ -1,6 +1,6 @@
-# Retail CDC Pipeline (Databricks + Delta Lake)
+# Real-Time CDC Data Pipeline using Databricks, Spark Streaming, Auto Loader, and Delta Lake
 
-## 🎯 Project Objective
+## Project Objective
 
 This project demonstrates how a real-time data pipeline can be built end-to-end using Databricks, Spark Structured Streaming, and Delta Lake.  
 The goal is to show how **Change Data Capture (CDC)** data flows through a modern Lakehouse — from raw change events all the way to clean, analytics-ready tables.
@@ -11,7 +11,7 @@ The result is a simple, fully runnable example of a retail-style CDC pipeline th
 
 ---
 
-## 🏗️ Architecture Diagram
+## Architecture Diagram
 
 Below is the high-level diagram of the pipeline.  
 This shows how CDC JSON events move through Landing → Bronze → Silver → Gold layers.
@@ -20,7 +20,7 @@ This shows how CDC JSON events move through Landing → Bronze → Silver → Go
 
 ---
 
-## 🚀 What This Project Does
+## What This Project Does
 
 - Generates fake **CDC JSON events** (`create`, `update`, `delete`)
 - Ingests those events using **Auto Loader** into a Bronze Delta table
@@ -30,7 +30,7 @@ This shows how CDC JSON events move through Landing → Bronze → Silver → Go
 
 ---
 
-## 🛠️ Tech Used
+## Tech Used
 
 - **Databricks Community Edition**
 - **Apache Spark**
@@ -42,7 +42,7 @@ This shows how CDC JSON events move through Landing → Bronze → Silver → Go
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 retail_databricks_notebooks/
@@ -70,7 +70,7 @@ retail_databricks_notebooks/
 
 ---
 
-## 🗂️ Bronze → Silver → Gold Flow
+## Bronze → Silver → Gold Flow
 
 1. **Landing** – Raw CDC JSON files land here.  
 2. **Bronze** – Auto Loader streams in raw events and normalizes them.  
@@ -104,7 +104,7 @@ retail_databricks_notebooks/
 
 ---
 
-## ✅ What I Learned
+## What to Learn
 
 - Auto Loader fundamentals  
 - Bronze/Silver/Gold layering  
