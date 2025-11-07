@@ -3,9 +3,9 @@
 ## Project Objective
 
 This project demonstrates how a real-time data pipeline can be built end-to-end using Databricks, Spark Structured Streaming, and Delta Lake.  
-The goal is to show how **Change Data Capture (CDC)** data flows through a modern Lakehouse — from raw change events all the way to clean, analytics-ready tables.
+The goal is to show how **Change Data Capture (CDC)** data flows through a modern Lakehouse from raw change events all the way to clean, analytics-ready tables.
 
-To keep the setup lightweight and easy to recreate, the pipeline simulates CDC events (similar to Debezium or Kafka) using Python, then processes them with PySpark. This makes it possible to focus on the core engineering concepts — streaming ingestion, CDC upserts, deletions, and data quality checks — without relying on heavy external systems.
+To keep the setup lightweight and easy to recreate, the pipeline simulates CDC events (similar to Debezium or Kafka) using Python, then processes them with PySpark. This makes it possible to focus on the core engineering concepts including streaming ingestion, CDC upserts, deletions, and data quality checks without relying on heavy external systems.
 
 The result is a simple, fully runnable example of a retail-style CDC pipeline that highlights how Bronze, Silver, and Gold layers work together in a Lakehouse architecture.
 
