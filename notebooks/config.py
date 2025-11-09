@@ -1,12 +1,13 @@
 # Databricks notebook source
-
 # MAGIC %md
-# MAGIC # Config — DBFS Paths
+# MAGIC ### Config — DBFS Path
+# MAGIC Setup DBFS directories for landing, bronze, silver, and gold.
 
 # COMMAND ----------
 
-# Base path for demo data
-BASE_PATH = "dbfs:/tmp/retail_cdc_demo"
+# Base path in your workspace
+USER_EMAIL = spark.sql("SELECT current_user()").collect()[0][0]
+BASE_PATH = f"dbfs:/Workspace/Users/{USER_EMAIL}/Files/retail_cdc_demo"
 
 PATHS = {
     "landing": f"{BASE_PATH}/data/landing",
@@ -17,13 +18,10 @@ PATHS = {
 
 display(PATHS)
 
-# Ensure directories exist (idempotent)
-try:
-    dbutils.fs.mkdirs(PATHS["landing"])
-    dbutils.fs.mkdirs(PATHS["bronze"])
-    dbutils.fs.mkdirs(PATHS["silver"])
-    dbutils.fs.mkdirs(PATHS["gold"])
-except Exception:
-    # Silent fallback when dbutils is unavailable (e.g., local execution)
-    pass
+# Ensure directories exist
+for p in PATHS.values():
+    try:
+        dbutils.fs.mkdirs(p)
+    except Exception as e:
+        print(f"Error: Could not create {p}: {e}")
 
