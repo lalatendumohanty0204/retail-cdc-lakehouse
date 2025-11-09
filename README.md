@@ -32,7 +32,7 @@ This shows how CDC JSON events move through Landing → Bronze → Silver → Go
 
 ## Tech Used
 
-- **Databricks Community Edition**
+- **Databricks**
 - **Apache Spark**
 - **Spark Structured Streaming**
 - **Auto Loader (cloudFiles)**
@@ -58,12 +58,6 @@ retail_databricks_notebooks/
 │   ├── sql_queries.py
 │   └── stop_streams.py
 │
-├── src/
-│   ├── etl/
-│   ├── utils/
-│   ├── quality/
-│   └── simulator/
-│
 └── images/
     └── architecture.png
 ```
@@ -86,9 +80,8 @@ retail_databricks_notebooks/
 3. Generate CDC events using `notebooks/generate_cdc.py`  
 4. Start streaming ingestion using `notebooks/bronze_stream.py`  
 5. Apply MERGE logic using `notebooks/silver_etl.py`  
-6. Build aggregates using `notebooks/gold_etl.py`  
-7. Run SQL queries via `notebooks/sql_queries.py`  
-8. Stop streams with `notebooks/stop_streams.py`
+6. Build aggregates using `notebooks/gold_etl.py`    
+7. Stop streams with `notebooks/stop_streams.py`
 
 ---
 

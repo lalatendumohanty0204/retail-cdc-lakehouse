@@ -1,7 +1,6 @@
 # Databricks notebook source
-
 # MAGIC %md
-# MAGIC # Stop Streams — Safety
+# MAGIC ### Stop Streams
 
 # COMMAND ----------
 

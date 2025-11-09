@@ -14,7 +14,11 @@
 
 # COMMAND ----------
 
-import os, json, time, uuid, random
+# MAGIC %run ./utils
+
+# COMMAND ----------
+
+import json, time, uuid, random
 from datetime import datetime
 
 class CDCEventSimulator:
@@ -38,19 +42,8 @@ class CDCEventSimulator:
     # Write CDC event samples
     def _write_json(self, filename, record):
         json_str = json.dumps(record)
-        if self.output_path.startswith("dbfs:/Workspace/Users/"):
-            # Convert dbfs:/Workspace/... to /Workspace/... for direct local access
-            local_path = self.output_path.replace("dbfs:", "")
-        else:
-            # fallback to /dbfs if using normal Databricks
-            local_path = self.output_path
-
-        os.makedirs(local_path, exist_ok=True)
-        file_path = os.path.join(local_path, filename)
-
-        with open(file_path, "w") as f:
-            f.write(json_str)
-
+        file_path = f"{self.output_path}/{filename}"
+        self.dbutils.fs.put(file_path, json_str, overwrite=True)
 
     # Core CDC event logic
     # Build a CDC event of type 'c', 'u', or 'd'.
