@@ -42,28 +42,6 @@ This shows how CDC JSON events move through Landing → Bronze → Silver → Go
 
 ---
 
-## Project Structure
-
-```
-retail_databricks_notebooks/
-│
-├── notebooks/
-│   ├── setup_install.py
-│   ├── config.py
-│   ├── generate_cdc.py
-│   ├── bronze_stream.py
-│   ├── silver_etl.py
-│   ├── gold_etl.py
-│   ├── data_quality.py
-│   ├── sql_queries.py
-│   └── stop_streams.py
-│
-└── images/
-    └── architecture.png
-```
-
----
-
 ## Bronze → Silver → Gold Flow
 
 1. **Landing** – Raw CDC JSON files land here.  
@@ -73,7 +51,7 @@ retail_databricks_notebooks/
 
 ---
 
-## ▶️ Running the Project
+## Running the Project
 
 1. Run `notebooks/setup_install.py`  
 2. Configure paths in `notebooks/config.py`  
@@ -85,7 +63,7 @@ retail_databricks_notebooks/
 
 ---
 
-## 🧪 Sample CDC Event
+## Sample CDC Event
 
 ```
 {
